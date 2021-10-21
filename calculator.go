@@ -19,7 +19,7 @@ func main() {
 	} else if b == "3" {
 		cantor()
 	}
-	
+
 }
 
 func birthday() {
@@ -96,7 +96,7 @@ func cantor() {
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		fmt.Println(price.Mid, " " +value.Exchange.Code)
+		fmt.Println(price.Mid, " "+value.Exchange.Code)
 	}
 	execute := price.Mid
 	result := pln / execute
