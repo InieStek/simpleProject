@@ -25,6 +25,7 @@ func main() {
 func birthday() {
 	var birth int
 	t := time.Now()
+	fmt.Println(t)
 	yr := t.Year()
 
 	fmt.Println("Kiedy się urodziłeś: ")
@@ -32,6 +33,7 @@ func birthday() {
 	fmt.Scanln(&liczba)
 	birth = yr - liczba
 	fmt.Println(birth)
+
 }
 func calculator() {
 	var wynik int
