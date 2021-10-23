@@ -3,8 +3,6 @@ package main
 import (
 	"errors"
 	"fmt"
-	"os"
-	"os/exec"
 )
 
 type Game struct {
@@ -76,12 +74,6 @@ func CheckForWinner(b [9]string, n int) (bool, string) {
 	return false, ""
 }
 
-func ClearScreen() {
-	c := exec.Command("cmd", "/c", "cls")
-	c.Stdout = os.Stdout
-	c.Run()
-}
-
 func (game *Game) SwitchPlayers() {
 	if game.player == "O" {
 		game.player = "X"
@@ -108,7 +100,6 @@ func AskForPlay() int {
 }
 
 func PrintBoard(b [9]string) {
-	//ClearScreen()
 	for i, v := range b {
 		if v == "" {
 			fmt.Printf(" ")
