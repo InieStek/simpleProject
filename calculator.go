@@ -97,7 +97,7 @@ func cantor() {
 	fmt.Scanln(&code)
 
 	value := nbpapi.NewCurrency("A")
-	price, err := value.GetRateToday(strings.ToUpper(code))
+	price, err := value.GetRateCurrent(strings.ToUpper(code))
 	if err != nil {
 		fmt.Println(err)
 	} else {
