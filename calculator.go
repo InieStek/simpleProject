@@ -3,20 +3,22 @@ package main
 import (
 	"fmt"
 	"github.com/pjaskulski/nbpapi"
+	"strings"
 	"time"
 )
 
 func main() {
 
-	var b string
+	var b int
 	fmt.Println("Co chcesz zrobić: ")
 	fmt.Println("Urodziny: 1\nKalkulator: 2\nKantor: 3 ")
 	fmt.Scanln(&b)
-	if b == "1" {
+	switch b {
+	case 1:
 		birthday()
-	} else if b == "2" {
+	case 2:
 		calculator()
-	} else if b == "3" {
+	case 3:
 		cantor()
 	}
 
@@ -93,8 +95,9 @@ func cantor() {
 	var code string
 	fmt.Println("Podaj kod waluty")
 	fmt.Scanln(&code)
+
 	value := nbpapi.NewCurrency("A")
-	price, err := value.GetRateToday(code)
+	price, err := value.GetRateToday(strings.ToUpper(code))
 	if err != nil {
 		fmt.Println(err)
 	} else {
