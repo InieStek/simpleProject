@@ -22,7 +22,7 @@ func main() {
 
 	for gameOver != true {
 		PrintBoard(game.board)
-		move := askforplay()
+		move := AskForPlay()
 		err := game.play(move)
 		if err != nil {
 			fmt.Println(err)
@@ -100,7 +100,7 @@ func (game *Game) play(pos int) error {
 	return errors.New("try another move")
 }
 
-func askforplay() int {
+func AskForPlay() int {
 	var moveInt int
 	fmt.Println("Enter Pos to play: ")
 	fmt.Scan(&moveInt)
@@ -108,7 +108,7 @@ func askforplay() int {
 }
 
 func PrintBoard(b [9]string) {
-	ClearScreen()
+	//ClearScreen()
 	for i, v := range b {
 		if v == "" {
 			fmt.Printf(" ")
